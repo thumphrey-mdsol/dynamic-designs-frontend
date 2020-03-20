@@ -1,26 +1,29 @@
+
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Route, Switch
+} from 'react-router-dom';
+import Nav from './components/Nav';
+import MainRoomPage from './containers/MainRoomPage';
+// import Room from '../containers/Room';
+// import RoomIndex from '../containers/RoomIndex';
 
-function App() {
+
+
+const App = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+        <Nav />
+        {/* <Route exact path="/" component={Home} /> */}
+        {/* <Route exact path="/main_room_page" component={MainRoomPage} />
+        <Route exact path="/room" component={Room} />
+        <Route exact path="/room_index" component={RoomIndex} /> */}
+      <MainRoomPage />
+      </div>
+    </Router>
   );
-}
+};
 
-export default App;
+export default App

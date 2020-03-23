@@ -1,9 +1,9 @@
 import React from 'react';
 // import RoomIndex from './RoomIndex'
-import SideNav from '../components/SideNav'
+import SideNav from '../containers/SideNav'
 
 
-class Room extends React.Component {
+class RoomBuilderPage extends React.Component {
 
     state = {
         furnitures: []
@@ -18,7 +18,7 @@ class Room extends React.Component {
 
   
     render(){
-        console.log("room page")
+        console.log("RoomBuilderPage page")
         return(
             "ji"
             // <SideNav {...this.state} />
@@ -26,4 +26,4 @@ class Room extends React.Component {
     }
 }
 
-export default Room;
+export default RoomBuilderPage;

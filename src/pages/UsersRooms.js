@@ -2,17 +2,17 @@ import React from 'react';
 
 
 
-Room = () => {
+const UsersRooms = () => {
 
   
 
     console.log("room page")
     return(
         "room"
-        // <RoomIndex /> 
+        // <UsersRooms /> 
 
     )
     
 }
 
-export default Room;
+export default UsersRooms;

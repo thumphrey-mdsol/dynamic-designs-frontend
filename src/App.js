@@ -4,10 +4,10 @@ import {
   BrowserRouter as Router,
   Route, Switch
 } from 'react-router-dom';
-import Nav from './components/Nav';
-import MainRoomPage from './containers/MainRoomPage';
-// import Room from '../containers/Room';
-// import RoomIndex from '../containers/RoomIndex';
+import Nav from './containers/Nav';
+import HomePage from './pages/HomePage';
+import RoomBuilderPage from './pages/RoomBuilderPage';
+import UsersRooms from './pages/UsersRooms';
 
 
 
@@ -16,11 +16,13 @@ const App = (props) => {
     <Router>
       <div className="app">
         <Nav />
-        {/* <Route exact path="/" component={Home} /> */}
-        {/* <Route exact path="/main_room_page" component={MainRoomPage} />
-        <Route exact path="/room" component={Room} />
-        <Route exact path="/room_index" component={RoomIndex} /> */}
-      <MainRoomPage />
+          <Switch >
+            <Route exact path="/home_page" component={HomePage} />
+            <Route exact path="/room_builder_page" component={RoomBuilderPage} />
+            <Route exact path="/users_rooms" component={UsersRooms} />
+         {/* <MainRoomPage /> */}
+            <Route exact path="/" component={HomePage} />
+          </Switch>
       </div>
     </Router>
   );

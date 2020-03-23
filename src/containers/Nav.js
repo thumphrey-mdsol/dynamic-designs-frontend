@@ -17,9 +17,9 @@ const Nav = () => {
             </Toolbar>
         </AppBar> */}
       {/* <NavLink to="/">Home</NavLink> */}
-      <NavLink to="/main_room_page">Main Room Page</NavLink>
+      <NavLink to="/home_page">Home Page</NavLink>
       <NavLink to="/room">Room</NavLink>
-      <NavLink to="/room_index">Your Saved Rooms</NavLink>
+      <NavLink to="/users_rooms">Your Rooms</NavLink>
     </div>
   );
 };

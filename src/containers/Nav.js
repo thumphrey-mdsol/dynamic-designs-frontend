@@ -18,7 +18,7 @@ const Nav = () => {
         </AppBar> */}
       {/* <NavLink to="/">Home</NavLink> */}
       <NavLink to="/home_page">Home Page</NavLink>
-      <NavLink to="/room">Room</NavLink>
+      <NavLink to="/room_builder_page">Room</NavLink>
       <NavLink to="/users_rooms">Your Rooms</NavLink>
     </div>
   );

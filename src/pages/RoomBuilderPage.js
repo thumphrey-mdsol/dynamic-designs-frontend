@@ -1,6 +1,7 @@
 import React from 'react';
-// import RoomIndex from './RoomIndex'
 import SideNav from '../containers/SideNav'
+import RoomContainer from '../containers/RoomContainer'
+
 
 
 class RoomBuilderPage extends React.Component {
@@ -14,14 +15,15 @@ class RoomBuilderPage extends React.Component {
         .then(r=>r.json())
         .then(furnitures => this.setState({furnitures}))
     }
-
-
-  
+ 
     render(){
         console.log("RoomBuilderPage page")
         return(
-            "ji"
-            // <SideNav {...this.state} />
+            <div> 
+             <SideNav {...this.state} />
+             <RoomContainer {...this.state} />
+            
+            </div>
         )
     }
 }

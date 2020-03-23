@@ -1,17 +1,17 @@
 import React from 'react';
+import SavedRoomContainer from '../containers/SavedRoomContainer'
 
 
 
-const UsersRooms = () => {
+class UsersRooms extends React.Component {
 
-  
+    render(){
 
-    console.log("room page")
-    return(
-        "room"
-        // <UsersRooms /> 
-
-    )
+        return(
+            <SavedRoomContainer />
+            
+        )
+    }
     
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import RoomLayoutCard from '../components/RoomLayoutCard'
 
-
+import { Container } from 'semantic-ui-react'
 
 class RoomLayoutCardContainer extends React.Component {
 
@@ -27,9 +27,9 @@ class RoomLayoutCardContainer extends React.Component {
        
         return(
                 
-            <div>
+            <Container>
                 {this.getEachRoom()}
-            </div>
+            </Container>
 
         )
     };

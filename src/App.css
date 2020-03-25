@@ -49,12 +49,16 @@
   border: 2px solid black;
 }
 
-.item {
-  background-color: black;
+.roomTiles {
+  background-color: lightgrey;
   border: 1px solid grey;
   padding: 20px;
   font-size: 30px;
   text-align: center;
+}
+
+.pageBuffer{
+  margin-top: 20px;
 }
 
 .sideNavFurniture{

@@ -19,7 +19,7 @@ class RoomBuilderPage extends React.Component {
     render(){
         console.log("RoomBuilderPage page")
         return(
-            <div> 
+            <div className="pageBuffer"> 
              <SideNav {...this.state} />
              <RoomContainer {...this.state} />
             

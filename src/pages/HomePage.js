@@ -17,7 +17,7 @@ class HomePage extends Component  {
 
         return(                    
             
-            <div>
+            <div >
                  
                 <RoomLayoutCardContainer />
             </div> 

@@ -8,6 +8,7 @@ import Nav from './containers/Nav';
 import HomePage from './pages/HomePage';
 import RoomBuilderPage from './pages/RoomBuilderPage';
 import UsersRooms from './pages/UsersRooms';
+import './App.css'
 
 
 

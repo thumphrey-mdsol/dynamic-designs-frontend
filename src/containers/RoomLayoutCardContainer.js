@@ -23,8 +23,6 @@ class RoomLayoutCardContainer extends React.Component {
     }
 
     render(){
-        // console.log("main room page")
-       
         return(
                 
             <Container>

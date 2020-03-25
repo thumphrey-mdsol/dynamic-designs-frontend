@@ -5,10 +5,9 @@ class FurnitureCard extends React.Component {
 
   
     render(){
-        // console.log("FurnitureCard page")
         return(
-            <div> 
-                <h1>Furniture Card</h1>
+            <div id="beef" className="beef"> 
+                <h1>Furniture Card</h1> 
             </div>
         )
     }

@@ -5,15 +5,15 @@ import FurnitureCard from '../components/FurnitureCard'
 class SideNav extends React.Component {
 
     renderFurniture = () => {
+        
         return this.props.furnitures.map(furniture => {
-            return <FurnitureCard furniture={furniture} key={furniture.id} />
+            return <FurnitureCard furniture={furniture} key={furniture.id} className="sideNavFurniture"/>
         })
     }
   
     render(){
-        // console.log("SideNav page")
         return(
-            <div> 
+            <div  id="furnitureContainer" > 
                 {this.renderFurniture()}
             </div>
         )

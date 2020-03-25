@@ -1,4 +1,5 @@
 import React from 'react';
+import { Divider, Image } from 'semantic-ui-react'
 
 
 class FurnitureCard extends React.Component {
@@ -6,8 +7,13 @@ class FurnitureCard extends React.Component {
   
     render(){
         return(
-            <div id="beef" className="beef"> 
-                <h1>Furniture Card</h1> 
+            <div onClick={this.props.clickOn } id={this.props.furniture.id} className=""> 
+                {this.props.furniture.product_name}
+                <Image 
+                    style={{"height" : "40px", "width" : "40px"}} 
+                    id={this.props.furniture.id} 
+                    src={this.props.furniture.image_url} 
+                    size='tiny' />
             </div>
         )
     }

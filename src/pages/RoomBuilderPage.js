@@ -1,13 +1,15 @@
 import React from 'react';
 import SideNav from '../containers/SideNav'
 import RoomContainer from '../containers/RoomContainer'
+import { Image } from 'semantic-ui-react'
 
-
+const initialState = 0
 
 class RoomBuilderPage extends React.Component {
 
     state = {
-        furnitures: []
+        furnitures: [],
+        pickedUp: initialState 
     }
 
     componentDidMount(){
@@ -15,13 +17,40 @@ class RoomBuilderPage extends React.Component {
         .then(r=>r.json())
         .then(furnitures => this.setState({furnitures}))
     }
+
+
+    clickOn = (e) => {
+        e.persist()
+        // console.log(e.target.id)         
+            this.setState({ pickedUp: e.target.id })
+        console.log("setting state", this.state.pickedUp)
+    }
+
+    dropClick = (e) => {
+        e.persist()
+        if(this.state.pickedUp){
+            console.log("checking state", this.state.pickedUp)
+
+         /// grab id of what was in pickedUp
+         // grab index of block that was clicked
+         // grab img url of id in state
+         // place id of pickedup into index
+         let index = this.state.pickedUp
+         
+           let furniture = this.state.furnitures.find(furniture=> furniture.id === index) 
+        // let furniture = this.state.furnitures
+           console.log("finding furniture", furniture)
+        //    let furnitureImg = furniture.image_url
+        //    e.target.src=furnitureImg
+        //    src={this.props.furniture.image_url} 
+        }
+    }
  
     render(){
-        console.log("RoomBuilderPage page")
         return(
             <div className="pageBuffer"> 
-             <SideNav {...this.state} />
-             <RoomContainer {...this.state} />
+             <SideNav {...this.state} clickOn={this.clickOn} />
+             <RoomContainer {...this.state} dropClick={this.dropClick} />
             
             </div>
         )

@@ -58,7 +58,8 @@
 }
 
 .pageBuffer{
-  margin-top: 20px;
+  margin-top: 6vh;
+  display: flex;
 }
 
 .sideNavFurniture{

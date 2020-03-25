@@ -7,7 +7,11 @@ class SideNav extends React.Component {
     renderFurniture = () => {
         
         return this.props.furnitures.map(furniture => {
-            return <FurnitureCard furniture={furniture} key={furniture.id} className="sideNavFurniture"/>
+            return <FurnitureCard 
+                furniture={furniture} 
+                key={furniture.id} 
+                className="sideNavFurniture" 
+                clickOn={this.props.clickOn}/>
         })
     }
   

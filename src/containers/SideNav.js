@@ -11,7 +11,9 @@ class SideNav extends React.Component {
                 furniture={furniture} 
                 key={furniture.id} 
                 className="sideNavFurniture" 
-                clickOn={this.props.clickOn}/>
+                clickOn={this.props.clickOn}
+                
+                />
         })
     }
   

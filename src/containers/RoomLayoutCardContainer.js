@@ -18,7 +18,7 @@ class RoomLayoutCardContainer extends React.Component {
 
     getEachRoom = () => {
         return this.state.rooms.map(room => {
-            return <RoomLayoutCard key={room.id} {...room} />
+            return <RoomLayoutCard  key={room.id} {...room} />
         })
     }
 

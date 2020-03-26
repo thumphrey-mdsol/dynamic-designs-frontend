@@ -10,14 +10,15 @@ class RoomLayoutCard extends React.Component {
       
         return(
                 
+            <div className="roomLayoutCardBuffer center">
             <Card >
-                <div >
-                <Header as='h1'>{this.props.category} </Header> 
-                <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSw_s2ZM9ORlp48nzcGqibvgw-2CsxT5Rbm3IQHkeUIIdg_lTXq" size='medium' />
+                <Header center as='h1'>{this.props.category} </Header> 
+                <Image center url={this.props.url} size='medium' />
                 <Divider hidden />
-                </div>
+                
                 
             </Card>
+            </div>
 
         )
     };

@@ -35,13 +35,18 @@ class RoomBuilderPage extends React.Component {
          // grab index of block that was clicked
          // grab img url of id in state
          // place id of pickedup into index
-         let index = this.state.pickedUp
+         let idOfPickedUp = parseInt(this.state.pickedUp)
          
-           let furniture = this.state.furnitures.find(furniture=> furniture.id === index) 
+           let furniture = this.state.furnitures.find(furniture=> furniture.id === idOfPickedUp) 
         // let furniture = this.state.furnitures
            console.log("finding furniture", furniture)
-        //    let furnitureImg = furniture.image_url
-        //    e.target.src=furnitureImg
+           let furnitureImg = furniture.image_url
+
+
+           e.target.src=furnitureImg
+           
+        //    return <img src={furnitureImg}/>
+
         //    src={this.props.furniture.image_url} 
         }
     }

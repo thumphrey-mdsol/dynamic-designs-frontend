@@ -30,6 +30,7 @@ class RoomBuilderPage extends React.Component {
         e.persist()
         if(this.state.pickedUp){
             console.log("checking state", this.state.pickedUp)
+            console.log(e.target.id)
 
          /// grab id of what was in pickedUp
          // grab index of block that was clicked
@@ -40,10 +41,25 @@ class RoomBuilderPage extends React.Component {
            let furniture = this.state.furnitures.find(furniture=> furniture.id === idOfPickedUp) 
         // let furniture = this.state.furnitures
            console.log("finding furniture", furniture)
-           let furnitureImg = furniture.image_url
+
+           /** CARYN NOTE START HERE  */
+
+           // assuming e.target.x and e.target.y are the x and y of the grid cell clicked
+           let newFurnitures = this.state.furnitures.map(furniture => {
+               if (furniture.id === idOfPickedUp){
+                   return {...furniture, x: e.target.x, y: e.target.y }
+               } else {
+                   return furniture
+               }
+           })
+           this.setState({ furnitures: newFurnitures })
+
+           /** CARYN NOTE END HERE ====> go to roomcontainer  */
+        //    let furnitureImg = furniture.image_url
 
 
-           e.target.src=furnitureImg
+
+        //    e.target.src=furnitureImg
            
         //    return <img src={furnitureImg}/>
 

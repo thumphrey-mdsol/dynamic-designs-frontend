@@ -16,13 +16,14 @@ class RoomContainer extends React.Component {
         return grid
     }
 
-    getFurnitureSpecs = () => {
-        // find furniture by id 
-        this.props.savedRoom.map(furniture => (
-                        <PlacedFurniture x={furniture.x_coordinate} y={furniture.y_coordinate} width={furniture.width} length={furniture.length}>
-                            <img src={furniture.img} alt={furniture.name} />
-                        </PlacedFurniture> 
-                    ))
+    renderFurniture = (furniture) => {
+        console.log(furniture)
+        // // find furniture by id to get length and width
+        // const selectedFurniture = this.props.furniture.find(furniture => furniture.id === furniture.furniture_id)
+        // // find savedFurniture
+        // return <PlacedFurniture x={furniture.x_coordinate} y={furniture.y_coordinate} width={selectedFurniture.width} length={selectedFurniture.length}>
+        // <img src={selectedFurniture.img} alt={selectedFurniture.name} />
+        // </PlacedFurniture>
     }
 
     render(){
@@ -31,7 +32,7 @@ class RoomContainer extends React.Component {
                 <RoomNameForm/>
                 <div className="roomSandbox">
                     {this.makeGridBoxes()}
-                    
+                    {this.savedRoom.room_furnitures ? this.savedRoom.room_furnitures.map(furniture => this.renderFurniture(furniture)):null}
                 </div>
                 <div>
                     <button  onClick class="ui primary button " >Save Room</button>

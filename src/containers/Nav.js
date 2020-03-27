@@ -37,7 +37,7 @@ const Nav = () => {
           <Menu.Item as="a" > Rooms </Menu.Item>
         </NavLink>
         <NavLink to="/users_rooms" >
-          <Menu.Item as="a" > Your Rooms </Menu.Item>
+          <Menu.Item as="a" > Saved Rooms </Menu.Item>
         </NavLink>
         <NavLink to="/home_page" >
           <Menu.Item >

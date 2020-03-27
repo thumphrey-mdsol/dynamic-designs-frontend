@@ -19,7 +19,7 @@ class App extends React.Component {
     return (
       <Router>
         <div className="app">
-          <Nav />
+            <Nav />
             <Switch >
               <Route path="/home_page" component={HomePage} />
               <Route exact path="/room_builder_page" component={RoomBuilderPage} />

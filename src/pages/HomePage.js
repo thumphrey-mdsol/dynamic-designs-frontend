@@ -9,10 +9,8 @@ import { Container, Image, Header } from 'semantic-ui-react'
 
 
 
-// class HomePage extends React.Component () {
 class HomePage extends Component  {
  
-        // console.log("main room page")
     render () {
 
         return(                    

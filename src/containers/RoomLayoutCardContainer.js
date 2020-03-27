@@ -1,6 +1,6 @@
 import React from 'react';
 import RoomLayoutCard from '../components/RoomLayoutCard'
-
+import { Link } from 'react-router-dom';
 import { Container } from 'semantic-ui-react'
 
 class RoomLayoutCardContainer extends React.Component {
@@ -16,9 +16,12 @@ class RoomLayoutCardContainer extends React.Component {
         .then(rooms => this.setState({rooms}))
     }
 
+    // This should route to roomEdit page
     getEachRoom = () => {
         return this.state.rooms.map(room => {
-            return <RoomLayoutCard key={room.id} {...room} />
+            return <RoomLayoutCard  key={room.id} {...room}>
+                
+            </RoomLayoutCard>
         })
     }
 

@@ -30,14 +30,14 @@ class RoomBuilderPage extends React.Component {
         e.persist()
         // console.log(e.target.id)         
             this.setState({ pickedUp: e.target.id })
-        // console.log("setting state", this.state.pickedUp)
+        console.log("setting state", this.state.pickedUp)
     }
 
     dropClick = (e) => {
         e.persist()
         // console.log(e.target)
         if(this.state.pickedUp){
-            // console.log("checking state", this.state.pickedUp)
+            console.log("checking state", this.state.pickedUp)
 
             // set state using id of furniture selected
             let idOfPickedUp = parseInt(this.state.pickedUp)
@@ -45,13 +45,15 @@ class RoomBuilderPage extends React.Component {
 
             const coordinates = e.target.id.split(", ").map(num => parseInt(num))
             // set the saved_room and furniture ids to room_furniture
-            const droppedFurniture = {saved_room_id: 52, furniture_id: furniture.id, x_coordinate: coordinates[0], y_coordinate: coordinates[1]}
-            // console.log(droppedFurniture)
+            const droppedFurniture = {saved_room_id: this.state.savedRoom.id, furniture_id: furniture.id, x_coordinate: coordinates[0], y_coordinate: coordinates[1]}
+            console.log(droppedFurniture)
             fetch('http://localhost:3000/room_furnitures', {
                 method: "POST",
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(droppedFurniture)
             })
+            .then(resp=> resp.json())
+            .then(console.log)
            this.setState({pickedUp: initialState})
         }
     }

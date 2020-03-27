@@ -18,6 +18,7 @@ class RoomBuilderPage extends React.Component {
         fetch('http://localhost:3000/furnitures')
         .then(r=>r.json())
         .then(furnitures => this.setState({furnitures}))
+        // should abstract fetch out but who got time for that
         fetch('http://localhost:3000/saved_rooms/52')
         .then(r=>r.json())
         .then(savedRoom => this.setState({savedRoom}))
@@ -37,39 +38,29 @@ class RoomBuilderPage extends React.Component {
         if(this.state.pickedUp){
             // console.log("checking state", this.state.pickedUp)
 
-         /// grab id of what was in pickedUp
-         // grab index of block that was clicked
-         // grab img url of id in state
-         // place id of pickedup into index
+            // set state using id of furniture selected
             let idOfPickedUp = parseInt(this.state.pickedUp)
-         
            let furniture = this.state.furnitures.find(furniture=> furniture.id === idOfPickedUp) 
-        // let furniture = this.state.furnitures
-        //    console.log("finding furniture", furniture)
-        //    let furnitureImg = furniture.image_url
-        //    e.target.src=furnitureImg
-        //    return <img src={furnitureImg}/>
-        //    src={this.props.furniture.image_url} 
 
             const coordinates = e.target.id.split(", ").map(num => parseInt(num))
             // set the saved_room and furniture ids to room_furniture
-            const droppedFurniture = {room_id: 52, furniture_id: furniture.id, x_coordinate: coordinates[0], y_coordinate: coordinates[1]}
+            const droppedFurniture = {saved_room_id: 52, furniture_id: furniture.id, x_coordinate: coordinates[0], y_coordinate: coordinates[1]}
 
             this.setState({placedFurniture: [...this.state.placedFurniture, droppedFurniture]})
-            // fetch('http://localhost:3000/room_furnitures', {
-            //     method: "POST",
-            //     headers,
-            //     body: JSON.stringify(droppedFurniture)
-            // })
+            fetch('http://localhost:3000/room_furnitures', {
+                method: "POST",
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(droppedFurniture)
+            })
             // .catch(console.log)
             // .then(r=>r.json())
             // .then(furnitures => this.setState({furnitures}))
-
-            // SEPERATE FETCH set state with saved furniture id's
-
            this.setState({pickedUp: initialState})
-
         }
+    }
+
+    deleteFurniture = () => {
+        fetch(`URL`, { method: "DELETE" })
     }
  
     render(){

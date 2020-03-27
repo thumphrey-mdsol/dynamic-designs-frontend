@@ -32,7 +32,7 @@ class RoomContainer extends React.Component {
                 <RoomNameForm/>
                 <div className="roomSandbox">
                     {this.makeGridBoxes()}
-                    {this.savedRoom.room_furnitures ? this.savedRoom.room_furnitures.map(furniture => this.renderFurniture(furniture)):null}
+                    {/* {this.savedRoom.room_furnitures ? this.savedRoom.room_furnitures.map(furniture => this.renderFurniture(furniture)):null} */}
                 </div>
                 <div>
                     <button  onClick class="ui primary button " >Save Room</button>

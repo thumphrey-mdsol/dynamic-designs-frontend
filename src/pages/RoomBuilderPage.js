@@ -11,6 +11,7 @@ class RoomBuilderPage extends React.Component {
     state = {
         furnitures: [],
         placedFurniture: [],
+        savedRoom: {},
         pickedUp: initialState 
     }
 
@@ -19,7 +20,7 @@ class RoomBuilderPage extends React.Component {
         .then(r=>r.json())
         .then(furnitures => this.setState({furnitures}))
         // should abstract fetch out but who got time for that
-        fetch('http://localhost:3000/saved_rooms/52')
+        fetch('http://localhost:3000/saved_rooms/62')
         .then(r=>r.json())
         .then(savedRoom => this.setState({savedRoom}))
     }
@@ -27,9 +28,9 @@ class RoomBuilderPage extends React.Component {
 
     clickOn = (e) => {
         e.persist()
-        console.log(e.target.id)         
+        // console.log(e.target.id)         
             this.setState({ pickedUp: e.target.id })
-        console.log("setting state", this.state.pickedUp)
+        // console.log("setting state", this.state.pickedUp)
     }
 
     dropClick = (e) => {
@@ -45,16 +46,12 @@ class RoomBuilderPage extends React.Component {
             const coordinates = e.target.id.split(", ").map(num => parseInt(num))
             // set the saved_room and furniture ids to room_furniture
             const droppedFurniture = {saved_room_id: 52, furniture_id: furniture.id, x_coordinate: coordinates[0], y_coordinate: coordinates[1]}
-
-            this.setState({placedFurniture: [...this.state.placedFurniture, droppedFurniture]})
+            // console.log(droppedFurniture)
             fetch('http://localhost:3000/room_furnitures', {
                 method: "POST",
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(droppedFurniture)
             })
-            // .catch(console.log)
-            // .then(r=>r.json())
-            // .then(furnitures => this.setState({furnitures}))
            this.setState({pickedUp: initialState})
         }
     }

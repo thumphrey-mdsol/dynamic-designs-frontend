@@ -16,23 +16,26 @@ class RoomContainer extends React.Component {
         return grid
     }
 
-    renderFurniture = (furniture) => {
-        console.log(furniture)
-        // // find furniture by id to get length and width
-        // const selectedFurniture = this.props.furniture.find(furniture => furniture.id === furniture.furniture_id)
-        // // find savedFurniture
-        // return <PlacedFurniture x={furniture.x_coordinate} y={furniture.y_coordinate} width={selectedFurniture.width} length={selectedFurniture.length}>
-        // <img src={selectedFurniture.img} alt={selectedFurniture.name} />
-        // </PlacedFurniture>
+    renderFurniture = (roomFurniture) => {
+        console.log(roomFurniture)
+        // find furniture by id to get length and width
+        const selectedFurniture = this.props.furnitures.find(furniture => furniture.id === roomFurniture.furniture_id)
+        // debugger
+        console.log(selectedFurniture)
+        // find savedFurniture
+        return <PlacedFurniture x={roomFurniture.x_coordinate} y={roomFurniture.y_coordinate} width={selectedFurniture.width} length={selectedFurniture.length}>
+        <img src={selectedFurniture.img} alt={selectedFurniture.name} />
+        </PlacedFurniture>
     }
 
     render(){
+        console.log(this.props.savedRoom.room_furnitures)
         return(
             <div>
                 <RoomNameForm/>
                 <div className="roomSandbox">
                     {this.makeGridBoxes()}
-                    {/* {this.savedRoom.room_furnitures ? this.savedRoom.room_furnitures.map(furniture => this.renderFurniture(furniture)):null} */}
+                    {this.props.savedRoom.room_furnitures && this.props.furnitures && this.props.savedRoom.room_furnitures.map(furniture => this.renderFurniture(furniture))}
                 </div>
                 <div>
                     <button  onClick class="ui primary button " >Save Room</button>

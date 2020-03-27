@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage';
 import RoomBuilderPage from './pages/RoomBuilderPage';
 import UsersRooms from './pages/UsersRooms';
 import './App.css'
+import RoomNameForm from './components/RoomNameForm';
 
 
 
@@ -24,7 +25,7 @@ class App extends React.Component {
               <Route path="/home_page" component={HomePage} />
               <Route exact path="/room_builder_page" component={RoomBuilderPage} />
               <Route exact path="/users_rooms" component={UsersRooms} />
-          
+              <Route exact path="/name_form" component={RoomNameForm} />
               <Route exact path="/" component={HomePage} />
             </Switch>
         </div>
